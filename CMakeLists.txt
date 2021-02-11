@@ -11,7 +11,7 @@ if(NOT WINDOWS_HEADER)
 endif()
 
 file(GLOB_RECURSE SOURCE_FILES src/*.cpp)
-add_library(gdrpc SHARED ${SOURCE_FILES})
+add_library(robtop-replay SHARED ${SOURCE_FILES})
 
 target_include_directories(robtop-replay PRIVATE
   libraries/minhook/include
