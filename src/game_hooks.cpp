@@ -160,6 +160,4 @@ void doTheHook() {
     MH_CreateHook(hook.orig_addr, hook.hook_fn, hook.orig_fn);
     MH_EnableHook(hook.orig_addr);
   }
-  
-  std::cout << "done!" << std::endl;
 }
