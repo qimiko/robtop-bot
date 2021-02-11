@@ -14,7 +14,7 @@ This extension does interact with save data, but only to set the `recordString` 
 
 ## Why?
 
-This is to provide a more clear view of how RobTop's internal rating tools look, including the replay functionality.
+This is to provide a more clear view of how RobTop's internal rating tools look, including the replay functionality. See [this thread](https://twitter.com/kyuriime/status/1351685664526372865) for more information.
 
 ## How do I delete a replay/get out of playback mode?
 
