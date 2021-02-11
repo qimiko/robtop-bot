@@ -27,6 +27,7 @@ std::vector<std::string> explode(std::string &string, char separator) {
   return splitlist;
 }
 
+// replay strings are usually only committed to save data when levelType == 2 on newer versions
 void (__thiscall *PlayLayer_levelComplete_O)(void *);
 void __fastcall PlayLayer_levelComplete_H(void *self) {
   auto do_record_actions = *offset_from_base<bool>(self, 0x429);
@@ -111,13 +112,10 @@ bool __fastcall PlayLayer_init_H(cocos2d::CCLayer *self, void * _edx, GJGameLeve
         auto in_testmode = offset_from_base<bool>(self, 0x494);
         *in_testmode = true;
     } else {
+        // recording is only usually enabled when levelType == 2, this keeps it always enabled
         auto do_record_actions = offset_from_base<bool>(self, 0x429);
         *do_record_actions = true;
     }
-    
-    auto playback_mode = offset_from_base<bool>(self, 0x470);
-    auto disable_replay_clicks = offset_from_base<bool>(self, 0x471);
-    auto do_record_actions = offset_from_base<bool>(self, 0x429);
   }
 
   return status;
